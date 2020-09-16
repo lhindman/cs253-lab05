@@ -48,27 +48,35 @@ Enter triangle height:
 3. Test the program using to ensure it functions as expected.
 4. Commit the changes to your local repository with a message stating that LabWarmup is completed.
 5. Push the changes from your local repository to the github classroom repository.
-6. Update the Coding Journal with an entry describing your experience using the steps outlined below.
+6. Update the Coding Journal with your observations from comparing the assembly code (myprog.s) before and after adding loops
 
 
 ## Lab Activity - Draw a half arrow
 ### Problem Description
 
-This program outputs a downwards facing arrow composed of a rectangle and a right triangle. The arrow dimensions are defined by user specified arrow base height, arrow base width, and arrow head width.
+This program outputs a downwards facing arrow composed of a rectangle and a right triangle. The arrow dimensions are defined by user specified arrow base height, arrow base width, and arrow head width.  
 
 <br />
-1. Modify the given program to use a loop to output an arrow base of height arrowBaseHeight.  
+1. Run the following commands to generate the baseline assembly code for this activity  
+
+```
+make myprog-v2
+mv myprog.s myprog-baseline.s
+```
+<br />
+2. Modify the given program to use a loop to output an arrow base of height arrowBaseHeight.  
 
 <br />
 <br />
-2. Modify the given program to use a loop to output an arrow base of width arrowBaseWidth. Use a nested loop in which the inner loop draws the *’s, and the outer loop iterates a number of times equal to the height of the arrow base. 
-<br />
-<br />
-3. Modify the given program to use a loop to output an arrow head of width arrowHeadWidth. Use a nested loop in which the inner loop draws the *’s, and the outer loop iterates a number of times equal to the height of the arrow head. 
+3. Modify the given program to use a loop to output an arrow base of width arrowBaseWidth. Use a nested loop in which the inner loop draws the *’s, and the outer loop iterates a number of times equal to the height of the arrow base.  
 
 <br />
 <br />
-4. Modify the given program to only accept an arrow head width that is larger than the arrow base width. Use a loop to continue prompting the user for an arrow head width until the value is larger than the arrow base width. 
+5. Modify the given program to use a loop to output an arrow head of width arrowHeadWidth. Use a nested loop in which the inner loop draws the *’s, and the outer loop iterates a number of times equal to the height of the arrow head. 
+
+<br />
+<br />
+6. Modify the given program to only accept an arrow head width that is larger than the arrow base width. Use a loop to continue prompting the user for an arrow head width until the value is larger than the arrow base width. 
 
 ```
 while (arrowHeadWidth <= arrowBaseWidth) {
@@ -96,8 +104,17 @@ Enter arrow head width:
 ***
 **
 *
+```
+<br />
+6. Run the following command to regenerate the assembly code for the final solution
 
 ```
+make myprog-v2
+```
+<br />
+7. Compare myprog-baseline.s with the newly generated myprog.s. Update the Coding Journal with your observations from comparing the assembly code before and after adding loops. What differences do you see? What stands out?
+<br />
+<br />
 
 ### Implementation Guide
 1. Expand the folder named LabActivity and open the file named main.c
@@ -105,7 +122,7 @@ Enter arrow head width:
 3. Test the program using to ensure it functions as expected.
 4. Commit the changes to your local repository with a message stating that LabActivity is completed.
 5. Push the changes from your local repository to the github classroom repository.
-6. Update the Coding Journal with an entry describing your experience using the steps outlined below.
+6. Update the Coding Journal with your observations from comparing the assembly code before and after adding loops
 
 ## Coding Journal
 Keep a journal of your activities as you work on this lab. Many of the best engineers that I have worked with professionally have kept some sort of engineering journal. I personally packed notebooks around with me for nearly 8 years before I began keeping my notes electronically.   

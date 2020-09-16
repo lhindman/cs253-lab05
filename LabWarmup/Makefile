@@ -17,9 +17,14 @@ build: myprog
 myprog: main.o 
 	$(CC) $(CFLAGS) $^ -o $@ 
 
+myprog-v2:
+	gcc -E main.c -o myprog.i
+	gcc -S myprog.i -o myprog.s
+	as myprog.s -o myprog.o
+	ld /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/x86_64-linux-gnu/crtn.o /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/libc.so myprog.o -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o myprog-v2
 
 test:
 	./myprog
 
 clean:
-	rm -f *.o *.d a.out myprog mytests main
+	rm -f *.o *.d *.i *.s a.out myprog myprog-v2 mytests main
